@@ -1,0 +1,171 @@
+:root {
+    --Verydarkdesaturatedblue: hsl(238, 29%, 16%);
+    --Softred: hsl(14, 88%, 65%);
+
+    --Softviolet: hsl(273, 75%, 66%);
+    --Softblue: hsl(240, 73%, 65%);
+
+
+    --Verydarkgrayishblue: hsl(237, 12%, 33%);
+    --Darkgrayishblue: hsl(240, 6%, 50%);
+
+    --Lightgrayishblue: hsl(240, 5%, 91%);
+
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    font-family: "Kumbh Sans", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(var(--Softviolet), var(--Softblue));
+    padding: 2em 5%;
+}
+
+p {
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+* :first-child {
+    margin-top: 0;
+}
+
+* :last-child {
+    margin-bottom: 0;
+}
+
+
+.faq {
+    background-color: white;
+    border-radius: 14px;
+    margin-top: 5em;
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-position-x: 50%;
+    padding-bottom: 3.57em;
+    padding-left: 2em;
+    padding-right: 2em;
+
+}
+
+.faq_img-mobile {
+    position: relative;
+    max-width: 237px;
+    top: -8em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq_content {
+    margin-top: -4em;
+}
+
+.faq_title {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.faq_accordion_item {
+    width: 100%;
+    padding: 1.42em 0;
+    border-bottom: solid 1px var(--Lightgrayishblue);
+    cursor: pointer;
+}
+
+.faq_accordion_item:hover .faq_accordion_q {
+    color: var(--Softred);
+}
+.faq_accordion_q 
+{
+    transition: color 300ms;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 0;
+}
+
+.faq_accordion_q .arrow {
+    margin-left: auto;
+    display: block;
+}
+.faq_accordion_a {
+    display: none;
+    max-width: 317px;
+    color: var(--Darkgrayishblue);
+}
+
+.faq_accordion_item.selected .faq_accordion_q {
+    font-weight: bold;
+}
+
+.faq_accordion_item.selected .faq_accordion_a {
+    display: inherit;
+}
+.faq_accordion_item.selected .faq_accordion_q .arrow {
+    transform: rotate(180deg);
+}
+
+
+
+.desktop 
+{
+    display: none;
+}
+
+.mobile {
+    display: inherit;
+}
+
+
+@media (min-width: 768px)
+{
+
+
+    .faq {
+        display: flex;
+        align-items: center;
+        background-image: url(./images/illustration-woman-online-desktop.svg), url(./images/bg-pattern-desktop.svg);
+        background-position: -7em center, -42em -27em;
+        padding-left: 30em;
+        padding-right: 6em;
+        position: relative;
+        margin-top: 0;
+        padding-top: 3.57em;
+
+    }
+
+    .faq_content{
+        margin-top: 0;
+    }
+
+    .faq_title {
+        text-align: left;
+    }
+
+    .faq_img-box-desktop 
+    {
+        position: absolute;
+        left: -110px;
+        top: 200px;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: inherit;
+    }
+}
